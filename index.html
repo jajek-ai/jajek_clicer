@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jajek</title>
+  <style>
+
+    body{
+            margin: 0;
+            padding: 0;
+            background-color: rgb(194, 192, 79);
+            background-image: url('https://rksokecie.pl/sites/default/files/styles/foto_normal/public/rocznik_2009-284.jpg');
+            background-size: auto;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+    }
+
+    button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 47.5%; 
+    margin-top: 25%;  
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;  
+    background-color: rgb(217, 255, 0);     
+}
+
+    button:hover{
+        box-shadow: 10px 5px 5px rgb(83, 82, 0);
+        background-color: rgb(129, 151, 0);
+    }
+
+    #score {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 24px;
+      color: rgb(255, 255, 255);
+      background-color: blue;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+    <div id="score">Licznik OPPO VIVO AIRPODS BLANKA 🥚 🥚 🥚: 0</div>
+  <button onclick="speak()">OPPO VIVO AIRPODS BLANKA 🥚 🥚 🥚 </button>
+
+  <script>
+    const scoreElement = document.getElementById("score");
+    let score = 0;
+    function speak() {
+      const text = "oppo VIVO erpods BLANKA I TRZY JAJKA";
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'pl-PL'; 
+      speechSynthesis.speak(utterance);
+      score++;
+      scoreElement.textContent = `Licznik OPPO VIVO AIRPODS BLANKA 🥚 🥚 🥚: ${score} `;
+    }
+  </script>
+</body>
+</html>
